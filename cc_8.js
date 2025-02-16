@@ -97,3 +97,20 @@ function createCartTracker() {
 let cart = createCartTracker();
 console.log(cart(20)); // Expected: Total Cart Value: $20
 console.log(cart(35)); // Expected: Total Cart Value: $55
+
+// Task 8: Recursion in JavaScript - Savings Growth Projection
+// calculate the projected savings amount after 10 years with a 5% annual increase
+function calculateSavings(years, amount) {
+    // Base case: when years reaches 10, stop recursing.
+    if (years >= 10) {
+        return amount;
+    } else {
+        // Increase amount by 5% for the next year
+        amount = amount * 1.05;
+        return calculateSavings(years + 1, amount);
+    }
+}
+
+// Data and logging
+console.log(`Projected Savings: $${calculateSavings(8, 1000).toFixed(2)}`);
+console.log(`Projected Savings: $${calculateSavings(5, 5000).toFixed(2)}`);
